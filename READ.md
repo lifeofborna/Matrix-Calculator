@@ -1,9 +1,10 @@
-#*Harjoitustyö OHTE*
+# *Ohjelmisto tekniikka,harjoitustyö*
 
 ## **Author: lifeofborna**
 
-*Life is good, life is amazing*
+# *Viikko 1*
 
-
-
-
+[gitlog.txt](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt
+)
+[komentorivi.txt](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt
+)
