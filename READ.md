@@ -1,10 +1,10 @@
 # *Ohjelmisto tekniikka,harjoitustyö*
 
-## **Author: lifeofborna**
+### **Author: lifeofborna**
 
-### **Tehtävät
+#### *Tehtävät*
 
-#### *Viikko 1*
+##### *Viikko 1*
 ------------------
 [gitlog.txt](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
