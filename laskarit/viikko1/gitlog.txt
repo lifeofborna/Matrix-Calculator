@@ -1,0 +1,96 @@
+commit 077d6638ac8e3895742e088cf8ba18929c0a1754
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 11:26:42 2022 +0200
+
+    File1 deleted and file2 renamed to file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 04fdf7c160a34cc0b64b56ea738b169e1e1fb0c9
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 11:18:30 2022 +0200
+
+    Added new dir with new files
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f09d6c498b02f3431df61a02a50488395463927c
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 11:06:36 2022 +0200
+
+    More lyrics, updates, greatness
+
+ eka.txt    | 14 ++++++++++++++
+ kolmas.txt |  2 ++
+ 2 files changed, 16 insertions(+)
+
+commit 30dc1176afe025a21ef5b306a00bd00ae8fafa03
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 11:02:07 2022 +0200
+
+    Renamed a file tiedosto.txt to eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit cb4dc05345d62c84564e0b970a28e46941e01b34
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 11:01:08 2022 +0200
+
+    Deleted file toinen.txt
+
+ toinen.txt | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 3b838b7c13215d3b648f5f51b1ba60dd5b049f0d
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 10:57:20 2022 +0200
+
+    Added lyrics from the goat himself
+
+ tiedosto.txt | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+commit 7cbb7306c193e9a28962581be0f6f3fcf7282ca2
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 10:50:21 2022 +0200
+
+    Updated on files and a new dir
+
+ kolmas.txt            | 2 ++
+ stuff/lifeofborna.txt | 0
+ toinen.txt            | 2 ++
+ 3 files changed, 4 insertions(+)
+
+commit 1d4f40f8515f8e3d9175e830090e6f649f13eac6
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 10:47:01 2022 +0200
+
+    Commitoidaan
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 9fa8561c4e4f8835aba17d867fca2c423752f178
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 10:43:56 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit e895464faaa6df11787721796e2da1cb46f5f269
+Author: Borna <borna.jamali@gmail.com>
+Date:   Thu Mar 17 10:41:40 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
