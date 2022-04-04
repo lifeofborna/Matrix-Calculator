@@ -2,8 +2,7 @@
 from matrixcalculator.matrix import matrix
 from matrixcalculator.matrixlogic import matrixlogic
 
-##TODO Fix values over 9 for example if user inserts values 23 23 -> they should be seperate
-##TODO 
+##TODO print a matrix representation
 class ui:
     def __init__(self):
         self.matrixOperations = matrixlogic()
@@ -31,6 +30,12 @@ class ui:
             if inp == "3":
                 self.multiplication()
                 continue
+    
+    
+    
+    
+    
+    
     
     def multiplication(self):
         matrix1,matrix2 = self.getMatrix("*")
@@ -69,6 +74,7 @@ class ui:
 
         if len(size1) != 3 or len(size2)!=3 or size1[1].isdigit() or size2[1].isdigit():
             print("Please use the right format for the sizes of the matrix")
+            print("")
             return False
 
         try:
@@ -79,11 +85,13 @@ class ui:
             
         except:
             print("Please give valid size for the matrices!")
+            print("")
             return False
         
 
         if self.matrixOperations.checkIfCorrectDimension(operation,n,m,n2,m2) == False:
             print("Dimensions mismatch! ")
+            print("")
             return False
 
 
@@ -91,11 +99,6 @@ class ui:
         return True
 
 
-    def sizeOfMatrices(self):
-        size1 = input("Size of the first matrix (mxn): ")
-        size2 = input("Size of the second matrix (mxn): ")
-                
-        return size1,size2
 
 
 
@@ -135,12 +138,24 @@ class ui:
         return matrix1,matrix2
 
 
+
+    def sizeOfMatrices(self):
+        size1 = input("Size of the first matrix (mxn): ")
+        size2 = input("Size of the second matrix (mxn): ")
+                
+        return size1,size2
+
+
+
+
     def instructions(self):
-        print("""Welcome to matrix calculator! 
+        print("""
+        Welcome to matrix calculator! 
+        
         0: To exit the program 
-        1: for matrix addition 
-        2: for matrix substraction
-        3: for matrix multiplication
+        1: for matrix addition A+B
+        2: for matrix substraction A-B
+        3: for matrix multiplication A*B
         """)
 
         print("")
@@ -152,15 +167,20 @@ class ui:
                   Seperate each row with a " ; ". 
                   eg:  1 1 1;1 1 1;1 1 1;
                   for a :
-                       
-                      1 1 1
-                      1 1 1
-                      1 1 1
 
-                    matrix.  
+                         1 1 1
+                         1 1 1
+                         1 1 1
+
+                  matrix.  
                                
                   
-                  Dimensions of the matrix should be given in a mxn format!                                                  """)
+                  Dimensions of the matrix should be given in a mxn format where:
+                  
+                     m <= 9
+                     n <= 9
+
+                                                                     """)
 
         print("")
-        return
+        

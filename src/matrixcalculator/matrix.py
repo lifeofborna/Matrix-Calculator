@@ -27,8 +27,7 @@ class matrix:
             if i == " ":
                     helper.append(int(value))
                     value = ""
-                    return -1
-
+                    continue
             if i == ";":
                 if value != "":
                     helper.append(int(value))
@@ -48,8 +47,8 @@ class matrix:
         if len(matrix) == 0 or len(helper)>0 or value != "":
             matrix.append(helper)
 
-         
-       # print(matrix)
+        
+    #    print(matrix)
         if not self.checkIfMatrixIsCorrectSize(matrix,self.m,self.n):
             return -1
 
@@ -58,7 +57,6 @@ class matrix:
 
     #Check if matrix is legal
     def checkIfCorrectFormat(self):
-        #Legal characters
         for i in self.string:
             if i.isdigit():
                 if int(i) >= 0:
@@ -83,5 +81,3 @@ class matrix:
         return True
 
 
-    def __str__(self):
-        return f"{self.string}"
