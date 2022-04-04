@@ -1,4 +1,4 @@
-# Changelo
+# Changelog
 ## Viikko 3
 
 - Toiminallinen tekstikäyttöliittymä
