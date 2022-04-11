@@ -31,5 +31,8 @@ Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminalli
 
 ### Testikattavuuden suoritus
 > **poetry run invoke coverage-report** 
-
+> 
 Raportti löytyy htmlcov hakemistosta.
+
+### Pylint tarkistukset suoritetaan:
+> **poetry run invoke lint**
