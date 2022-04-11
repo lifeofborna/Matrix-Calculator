@@ -10,6 +10,8 @@ Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminalli
 
 [Changelog](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
+[Arkkitehtuuri](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ## Asennus
 
 1. Tarvittavien riippuvuuksien asentaminen:
@@ -28,6 +30,6 @@ Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminalli
 >**poetry run invoke test**
 
 ### Testikattavuuden suoritus
-> **poetry run invoke coverage -report** 
+> **poetry run invoke coverage-report** 
 
 Raportti löytyy htmlcov hakemistosta.
