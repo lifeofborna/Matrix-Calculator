@@ -13,7 +13,7 @@ class MatrixLogic:
         try:
             final_matrix = [[matrix1[i][j] + matrix2[i][j]
                              for j in range(len(matrix1[0]))] for i in range(len(matrix1))]
-        except:
+        except TypeError:
             return False
         return final_matrix
 
@@ -21,7 +21,7 @@ class MatrixLogic:
         try:
             final_matrix = [[matrix1[i][j] - matrix2[i][j]
                              for j in range(len(matrix1[0]))] for i in range(len(matrix1))]
-        except:
+        except TypeError:
             return False
         return final_matrix
 
@@ -34,9 +34,10 @@ class MatrixLogic:
         for i in range(len(matrix1)):
             for j in range(len(matrix2[0])):
                 for columns in range(len(matrix2)):
-                    if isinstance(matrix2[i][columns],int) and isinstance(matrix1[i][columns],int):
+                    if isinstance(matrix2[i][columns], int) \
+                            and isinstance(matrix1[i][columns], int):
                         final_matrix[i][j] += matrix1[i][columns] * \
-                        matrix2[columns][j]
+                            matrix2[columns][j]
                     else:
                         return False
         return final_matrix

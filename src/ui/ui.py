@@ -24,7 +24,7 @@ class ui:
 
         # Create a logo
         dirname = os.path.dirname(__file__)
-        data_file_path = os.path.join(dirname,"LAMBDAB.png")
+        data_file_path = os.path.join(dirname, "LAMBDAB.png")
         logo = Image.open(open(data_file_path, 'rb'))
         logo = ImageTk.PhotoImage(logo)
         logo_label = tk.Label(image=logo)
