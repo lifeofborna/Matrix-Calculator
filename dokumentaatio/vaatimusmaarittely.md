@@ -16,12 +16,12 @@ Sovellus on suunniteltu siten, että se koostuu yhdestä käyttäjäroolista.
 
 ### Kirjautumisen jälkeen
 - Käyttäjä näkee vanhat suoritetut laskut.
-- Käyttäjä voi luoda uuden laskun ja valita laskuoperaation.
-  - Laskuoperaatiot ovat ( - + * )
-  - Jos käyttäjä syöttää laittoman laskuoperaation niin sovellus antaa virheilmoituksen. 
-- Käyttäjä antaa matriisin, johon tehdän laskuoperaatio ja toinen matriisi, jolla laskuoperaatio suoritetaan. 
-  - Sovellus tarkistaa, että matriisi ei sisällä ei sallittuja merkkejä, jos löytyy heittää virheilmoituksen. 
-  - Sovellus myös tarkistaa jos kertolasku operaatio on valittu niin matriisien rivit ja sarakkeet ovat salittuja tähän operaatioon.
+- Käyttäjä voi luoda uuden laskun ja valita laskuoperaation. (Tehty)
+  - Laskuoperaatiot ovat ( - + * ) (Tehty)
+  - Jos käyttäjä syöttää laittoman laskuoperaation niin sovellus antaa virheilmoituksen. (Tehty) 
+- Käyttäjä antaa matriisin, johon tehdän laskuoperaatio ja toinen matriisi, jolla laskuoperaatio suoritetaan. (Tehty) 
+  - Sovellus tarkistaa, että matriisi ei sisällä ei sallittuja merkkejä, jos löytyy heittää virheilmoituksen. (Tehty)
+  - Sovellus myös tarkistaa jos kertolasku operaatio on valittu niin matriisien rivit ja sarakkeet ovat salittuja tähän operaatioon.(Tehty)
 - Käyttäjä voi tyhjentää historiansa
 - Käyttäjä voi kirjautua ulos
 

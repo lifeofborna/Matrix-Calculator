@@ -21,7 +21,6 @@ Yksityiskohdat:
 - käyttöliittymään lisätty kaksi 3x3  matriisia  joihin käyttäjä voi syöttää tietoa
 - Käyttöliittymä implementoitu sovelluslogiikkaan eli kerto, erotus ja summa toimivaksi käyttäjän syötteellä
 - Laillisen matriisin tarkistus ja virheiden käsittely logiikka implementoitu
-- Koodin refaktorointi tekstikäyttöliittymästä graafiseen. 
-
+- Koodin refaktorointi tekstikäyttöliittymästä graafiseen ja pylintin standardeihin
 
 
