@@ -2,6 +2,9 @@
 
 Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminallisuuksiin kuuluu, kahden matriisin kertominen, yhteenlasku sekä erotus. 
 
+![Kuva](./dokumentaatio/kuvat/software.png)
+
+
 
 ## Dokumentaatio
 [Vaatimusmäärittely](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
