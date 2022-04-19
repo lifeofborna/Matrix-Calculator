@@ -1,4 +1,6 @@
 import numpy as np
+
+
 class MatrixLogic:
 
     '''
@@ -6,9 +8,8 @@ class MatrixLogic:
     Such as,
     multiplication, addition and substraction. It can also produce a inverse, determinant or transpose of a matrix
     '''
-    #TODO Transpose, inverse,determinant
-
     # Addition of the two matrices.
+
     def matrix_addition(self, matrix1, matrix2):
         try:
             final_matrix = [[matrix1[i][j] + matrix2[i][j]
@@ -42,21 +43,24 @@ class MatrixLogic:
                         return False
         return final_matrix
 
-    #Find the determinant by cofactor 
-    def matrix_determinant(self,matrix):
+    # Find the determinant by cofactor
+    def matrix_determinant(self, matrix):
         matrix_a = matrix[0][0]
         matrix_b = matrix[0][1]
         matrix_c = matrix[0][2]
 
-        determinant_a = matrix_a*(matrix[1][1]*matrix[2][2] - matrix[1][2]*matrix[2][1])
-        determinant_b = -matrix_b*(matrix[1][0]*matrix[2][2] - matrix[1][2]*matrix[2][0])
-        determinant_c = matrix_c*(matrix[1][0]*matrix[2][1] - matrix[2][0]*matrix[1][1])
-        
+        determinant_a = matrix_a * \
+            (matrix[1][1]*matrix[2][2] - matrix[1][2]*matrix[2][1])
+        determinant_b = -matrix_b * \
+            (matrix[1][0]*matrix[2][2] - matrix[1][2]*matrix[2][0])
+        determinant_c = matrix_c * \
+            (matrix[1][0]*matrix[2][1] - matrix[2][0]*matrix[1][1])
+
         answer = determinant_a+determinant_b+determinant_c
         return answer
-    
-    #Transpose the matrix rows = cols 
-    def matrix_transpose(self,matrix):
+
+    # Transpose the matrix rows = cols
+    def matrix_transpose(self, matrix):
         matrix_transpose = [[1 for i in range(3)] for j in range(3)]
 
         for i in range(len(matrix)):
@@ -64,9 +68,9 @@ class MatrixLogic:
                 matrix_transpose[j][i] = matrix[i][j]
 
         return matrix_transpose
-    
-    def matrix_inverse(self,matrix):
-        if self.matrix_determinant(matrix) == 0: 
+
+    def matrix_inverse(self, matrix):
+        if self.matrix_determinant(matrix) == 0:
             return -1
 
         create_matrix = np.array(matrix)
