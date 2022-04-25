@@ -1,6 +1,6 @@
 # *Ohjelmisto tekniikan harjoitustyö: Matriisilaskin*
 
-Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminallisuuksiin kuuluu, kahden matriisin kertominen, yhteenlasku ja erotus. Ohjelman toiminallisuuksiin kuuluu myös matriisien transpoosin, käänteismatriisin sekä determinantin laskemisen. 
+Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminallisuuksiin kuuluu, kahden matriisin kertominen, yhteenlasku ja erotus. Ohjelman toiminallisuuksiin kuuluu myös matriisien transpoosin, käänteismatriisin sekä determinantin laskeminen. 
 
 ![Kuva](./dokumentaatio/kuvat/software2.png)
 
