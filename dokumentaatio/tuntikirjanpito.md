@@ -11,9 +11,4 @@
 | 19.4  | 5    | Determinantin, transpoosin ja käänteismatriisin logiikkaan tutustuminen ja niiden implemenointi pythonilla käyttöliittymään |
 | 23.4  | 6    | Kirjautumis mahdollisuuden suunnittelu, tkinter, sqlite tutustuminen. Graafisen toteutuksen alustava luominen |
 | 25.4  | 4    | Käyttäjän kirjautumis totetus implementointi, tietokannan lisääminen/käyttö, virheviestien tarkistus. Käyttöliittymän päivitys|
-
-
-
-
-
-| yht   | 26   |
+| yht   | 41   |
