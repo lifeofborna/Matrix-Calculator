@@ -58,7 +58,7 @@ class ui:
                         messagebox.showerror(
                             "Error", "Please check matrix input!")
                         submit_text.set("Submit")
-                        return
+                        return -1
 
             return matrix
 
@@ -66,7 +66,11 @@ class ui:
 
         def addition():
             first_matrix = get_matrix(3, 3, matrix_input)
+            if first_matrix == -1:
+                return
             second_matrix = get_matrix(3, 3, matrix_input2)
+            if second_matrix == -1:
+                return
 
             # Check if valid format before
 
@@ -79,8 +83,14 @@ class ui:
             resultant_matrix(final_matrix)
 
         def multiplication():
+
             first_matrix = get_matrix(3, 3, matrix_input)
+            if first_matrix == -1:
+                return
             second_matrix = get_matrix(3, 3, matrix_input2)
+            if second_matrix == -1:
+                return
+
             try:
                 final_matrix = self.matrixOperations.matrix_multiplication(
                     first_matrix, second_matrix)
@@ -95,7 +105,11 @@ class ui:
 
         def substraction():
             first_matrix = get_matrix(3, 3, matrix_input)
+            if first_matrix == -1:
+                return
             second_matrix = get_matrix(3, 3, matrix_input2)
+            if second_matrix == -1:
+                return
 
             final_matrix = self.matrixOperations.matrix_substraction(
                 first_matrix, second_matrix)
@@ -107,7 +121,12 @@ class ui:
 
         def check_combo():
             first_matrix = get_matrix(3, 3, matrix_input)
+            if first_matrix == -1:
+                return
             second_matrix = get_matrix(3, 3, matrix_input2)
+            if second_matrix == -1:
+                return
+
             if chosen_operation.get() == ' Transpose matrix A':
                 try:
                     final_matrix = self.matrixOperations.matrix_transpose(
