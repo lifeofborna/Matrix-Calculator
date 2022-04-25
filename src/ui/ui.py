@@ -1,8 +1,11 @@
+from email import message
 import tkinter as tk
+from typing import final
 from unittest import result
 from PIL import Image, ImageTk
 from tkinter import ttk
 import os
+from tkinter import messagebox
 #from matrixcalculator.matrix import matrix
 
 from matrixcalculator.matrixlogic import MatrixLogic
@@ -40,7 +43,7 @@ class ui:
         matrix_entries2 = []
 
         rows, cols = 3, 3
-        finalMatrix = [[0] * rows for i in range(cols)]
+        final_matrix = [[0] * rows for i in range(cols)]
 
         # Create the matrix from the text variable
         def get_matrix(rows, cols, text_var):
@@ -52,7 +55,9 @@ class ui:
                     try:
                         matrix[i].append(int(text_var[i][j].get()))
                     except:
-                        submitText.set("Check input")
+                        messagebox.showerror(
+                            "Error", "Please check matrix input!")
+                        submit_text.set("Submit")
                         return
 
             return matrix
@@ -60,45 +65,108 @@ class ui:
         # Operations:
 
         def addition():
-            firstMatrix = get_matrix(3, 3, matrix_input)
-            secondMatrix = get_matrix(3, 3, matrix_input2)
+            first_matrix = get_matrix(3, 3, matrix_input)
+            second_matrix = get_matrix(3, 3, matrix_input2)
 
             # Check if valid format before
 
-            finalMatrix = self.matrixOperations.matrix_addition(
-                firstMatrix, secondMatrix)
-            if finalMatrix == False:
+            final_matrix = self.matrixOperations.matrix_addition(
+                first_matrix, second_matrix)
+            if final_matrix == False:
                 return
             # Set result to resultant
-            submitText.set("Success!")
-            resultantMatrix(finalMatrix)
+            submit_text.set("Success!")
+            resultant_matrix(final_matrix)
 
         def multiplication():
-            firstMatrix = get_matrix(3, 3, matrix_input)
-            secondMatrix = get_matrix(3, 3, matrix_input2)
+            first_matrix = get_matrix(3, 3, matrix_input)
+            second_matrix = get_matrix(3, 3, matrix_input2)
             try:
-                finalMatrix = self.matrixOperations.matrix_multiplication(
-                    firstMatrix, secondMatrix)
+                final_matrix = self.matrixOperations.matrix_multiplication(
+                    first_matrix, second_matrix)
             except:
-                finalMatrix = False
+                final_matrix = False
 
             # Check if valid format before
-            if finalMatrix == False:
+            if final_matrix == False:
                 return
-            submitText.set("Success!")
-            resultantMatrix(finalMatrix)
+            submit_text.set("Success!")
+            resultant_matrix(final_matrix)
 
         def substraction():
-            firstMatrix = get_matrix(3, 3, matrix_input)
-            secondMatrix = get_matrix(3, 3, matrix_input2)
+            first_matrix = get_matrix(3, 3, matrix_input)
+            second_matrix = get_matrix(3, 3, matrix_input2)
 
-            finalMatrix = self.matrixOperations.matrix_substraction(
-                firstMatrix, secondMatrix)
+            final_matrix = self.matrixOperations.matrix_substraction(
+                first_matrix, second_matrix)
             # Check if valid format before
-            if finalMatrix == False:
+            if final_matrix == False:
                 return
-            submitText.set("Success!")
-            resultantMatrix(finalMatrix)
+            submit_text.set("Success!")
+            resultant_matrix(final_matrix)
+
+        def check_combo():
+            first_matrix = get_matrix(3, 3, matrix_input)
+            second_matrix = get_matrix(3, 3, matrix_input2)
+            if chosen_operation.get() == ' Transpose matrix A':
+                try:
+                    final_matrix = self.matrixOperations.matrix_transpose(
+                        second_matrix)
+                except:
+                    return
+                resultant_matrix(final_matrix)
+
+            elif chosen_operation.get() == ' Transpose matrix B':
+                try:
+                    final_matrix = self.matrixOperations.matrix_transpose(
+                        first_matrix)
+                except:
+                    return
+                resultant_matrix(final_matrix)
+
+            elif chosen_operation.get() == ' Inverse matrix A':
+                try:
+                    final_matrix = self.matrixOperations.matrix_inverse(
+                        second_matrix)
+                except:
+                    return
+                if len(final_matrix) == 0:
+                    messagebox.showerror(
+                        "Warning", "Could not find an inverse for matrix A!")
+                    return
+                resultant_matrix(final_matrix)
+
+            elif chosen_operation.get() == ' Inverse matrix B':
+                try:
+                    final_matrix = self.matrixOperations.matrix_inverse(
+                        first_matrix)
+                except:
+                    return
+
+                if len(final_matrix) == 0:
+                    messagebox.showerror(
+                        "Warning", "Could not find an inverse for matrix B!")
+                    return
+                resultant_matrix(final_matrix)
+
+            elif chosen_operation.get() == ' Determinant A':
+                try:
+                    final_matrix = self.matrixOperations.matrix_determinant(
+                        second_matrix)
+                except:
+                    return
+                messagebox.showinfo(
+                    "Info", f"The determinant for the matrix A is: {final_matrix}")
+
+            elif chosen_operation.get() == " Determinant B":
+
+                try:
+                    final_matrix = self.matrixOperations.matrix_determinant(
+                        first_matrix)
+                except:
+                    return
+                messagebox.showinfo(
+                    "Info", f"The determinant for the matrix B is: {final_matrix} ")
 
         # new canvas for matrixes
         canvas = tk.Canvas(root, width=500, height=250,)
@@ -112,7 +180,7 @@ class ui:
 
         # In screen matrices:
 
-        def entryMatrix(matrix_input, matrix_entries, s):
+        def entry_matrix(matrix_input, matrix_entries, s):
             # Create empty lists to array, append StringVar and entry
             x_interval = 0
             y_interval = 0
@@ -132,7 +200,7 @@ class ui:
                 x_interval = 0
 
         # Set the resultant matrix
-        def resultantMatrix(resultantMatrix):
+        def resultant_matrix(resultantMatrix):
             s = 350
             x_interval = 0
             y_interval = 0
@@ -147,19 +215,19 @@ class ui:
                 x_interval = 0
 
         # Create matrices
-        entryMatrix(matrix_input, matrix_entries, 200)
-        entryMatrix(matrix_input2, matrix_entries2, 50)
-        resultantMatrix(finalMatrix)
+        entry_matrix(matrix_input, matrix_entries, 200)
+        entry_matrix(matrix_input2, matrix_entries2, 50)
+        resultant_matrix(final_matrix)
 
         # buttons
-        submitText = tk.StringVar()
+        submit_text = tk.StringVar()
 
-        button = tk.Button(root, textvariable=submitText, bg='DarkOliveGreen3',
+        button = tk.Button(root, textvariable=submit_text, bg='DarkOliveGreen3',
                            width=7, command=lambda: get_matrix(3, 3, matrix_input))
-        submitText.set("Submit")
+        submit_text.set("Submit")
         button.place(x=200, y=600)
 
-        button2 = tk.Button(root, textvariable=submitText, bg='DarkOliveGreen3',
+        button2 = tk.Button(root, textvariable=submit_text, bg='DarkOliveGreen3',
                             width=7, command=lambda: get_matrix(3, 3, matrix_input2))
         button2.place(x=50, y=600)
 
@@ -174,6 +242,22 @@ class ui:
         additionButton = tk.Button(
             root, text="+", bg='DarkOliveGreen3', width=5, command=lambda: addition())
         additionButton.place(x=400, y=600)
+
+        combo_box_button = tk.Button(
+            root, text="get", bg='DarkOliveGreen3', width=5, command=lambda: check_combo())
+        combo_box_button.place(x=30, y=720)
+
+        # Extra operations
+        n = tk.StringVar()
+        chosen_operation = ttk.Combobox(width=15, textvariable=n)
+
+        # Dropdownlist for combobox
+        tk.Label(root, text="Extra operations:", font=('Raleway', 10, 'bold'),
+                 ).place(x=23, y=660)
+
+        chosen_operation['values'] = (' Determinant A', ' Determinant B', ' Inverse matrix A',
+                                      ' Inverse matrix B', ' Transpose matrix A', ' Transpose matrix B')
+        chosen_operation.place(x=30, y=690)
 
         canvas.grid(columnspan=3)
 

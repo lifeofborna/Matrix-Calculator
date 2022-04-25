@@ -1,11 +1,11 @@
 
-from ui.ui import ui
-from matrixcalculator.matrixlogic import MatrixLogic
+from ui.login import run_class
 
 
 def main():
-    start = ui()
-    start.start()
+    run_class()
+
+ #   start.start()
 
 
 main()

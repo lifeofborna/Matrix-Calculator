@@ -24,3 +24,12 @@ Yksityiskohdat:
 - Koodin refaktorointi tekstikäyttöliittymästä graafiseen ja pylintin standardeihin
 
 
+## Viikko 5
+
+Yleisesti:
+Graafisen käyttöliittymän parantaminen, mahdollisuus kirjautua/rekisteröidä ja extra matriisi operaatioiden lisääminen
+
+Yksityiskohdat:
+- Matriisin determinantin/transpoosin ja käänteismatriisin logiikan ja toiminallisuus lisätty.
+- Selkeän virheviestien lisääminen. 
+- Uusi näkymä ennenkuin laskimeen päästään niin pyydetään käyttäjää tekemään käyttäjän ellei jo tehty. Tiedot tallennetaan tietokantaan.

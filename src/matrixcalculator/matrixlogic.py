@@ -1,3 +1,4 @@
+
 import numpy as np
 
 
@@ -6,7 +7,8 @@ class MatrixLogic:
     '''
     This class has functions to calculate operations between two matrices.
     Such as,
-    multiplication, addition and substraction. It can also produce a inverse, determinant or transpose of a matrix
+    multiplication, addition and substraction.
+    It can also produce a inverse, determinant or transpose of a matrix
     '''
     # Addition of the two matrices.
 
@@ -66,13 +68,14 @@ class MatrixLogic:
         for i in range(len(matrix)):
             for j in range(len(matrix[0])):
                 matrix_transpose[j][i] = matrix[i][j]
-
         return matrix_transpose
 
+    # Find the inverse of the matrix, utilizing numpy
     def matrix_inverse(self, matrix):
         if self.matrix_determinant(matrix) == 0:
-            return -1
+            return []
 
         create_matrix = np.array(matrix)
         inverse_matrix = np.linalg.inv(create_matrix)
+        inverse_matrix.round(decimals=2)
         return inverse_matrix
