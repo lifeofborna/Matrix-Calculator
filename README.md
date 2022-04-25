@@ -2,7 +2,7 @@
 
 Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminallisuuksiin kuuluu, kahden matriisin kertominen, yhteenlasku ja erotus. Ohjelman toiminallisuuksiin kuuluu myös matriisien transpoosin, käänteismatriisin sekä determinantin laskemisen. 
 
-![Kuva](./dokumentaatio/kuvat/software.png)
+![Kuva](./dokumentaatio/kuvat/software2.png)
 
 
 
