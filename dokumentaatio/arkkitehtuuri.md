@@ -4,9 +4,9 @@
 
 *Pakkausrakenne:* 
 
-![Pakkausrakenne](./kuvat/arkkitehtuuri.png)
+![Pakkausrakenne](./kuvat/package.png)
 
-Pakkaus ui sisältää graafisen käyttöliittymän koodin joka hyödyntää pakkausta matrixcalculator jossa on matriisi operaatioiden sovelluslogiikka.
+Pakkaus ui sisältää graafisen käyttöliittymän koodin joka hyödyntää pakkausta matrixcalculator jossa on matriisi operaatioiden sovelluslogiikka. Ui myös hyödyntää eri käyttäjän tietokantaoperaatioita pakkauksesta repositories.
 
 ## Päätoiminnallisuudet
 *Yhteenlaskuoperaatio:* 
