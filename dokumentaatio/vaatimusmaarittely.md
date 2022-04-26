@@ -10,9 +10,9 @@ Sovellus on suunniteltu siten, että se koostuu yhdestä käyttäjäroolista.
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen kirjautumista
-- Käyttäjällä on mahdollisuus luoda käyttäjätunnuksen
-- Käyttäjällä on mahdollisuus kirjautua sovellukseen.
-- Jos käyttäjätunnus on väärin tai sitä ei löydy niin sovellus antaa selkeän virheilmoituksen.
+- Käyttäjällä on mahdollisuus luoda käyttäjätunnuksen(Tehty)
+- Käyttäjällä on mahdollisuus kirjautua sovellukseen.(Tehty)
+- Jos käyttäjätunnus on väärin tai sitä ei löydy niin sovellus antaa selkeän virheilmoituksen.(Tehty)
 
 ### Kirjautumisen jälkeen
 - Käyttäjä näkee vanhat suoritetut laskut.
@@ -30,8 +30,8 @@ Sovellus on suunniteltu siten, että se koostuu yhdestä käyttäjäroolista.
 Perusversion jälkeen järjestelmää on mahdollista parantaa seuraavilla toiminnallisuuksilla: 
 
 - Matriisien ominaisarvojen/vektoreiden laskeminen.
-- Matriisin determinattien laskeminen.
-- Matriisien transpoosien laskeminen. 
+- Matriisin determinattien laskeminen.(Tehty)
+- Matriisien transpoosien laskeminen. (Tehty)
 - Matriisien vieminen porrasmuotoon tai supistettuun porrasmuotoon. 
 - Onko matriisi lineaarisesti riippumaton.
 - Matriisin kertominen skalaareilla. 
