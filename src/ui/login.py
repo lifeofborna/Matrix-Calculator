@@ -1,16 +1,8 @@
+from email import message
 from tkinter import *
 from tkinter import messagebox
-import sqlite3
 from ui.ui import ui
-
-with sqlite3.connect('database.db') as db:
-    cursor = db.cursor()
-
-
-cursor.execute(
-    'CREATE TABLE IF NOT EXISTS user (username TEXT NOT NULL PRIMARY KEY,password TEXT NOT NULL);')
-db.commit()
-db.close()
+from repositories.user_repository import UserRepository
 
 
 class userControl:
@@ -22,48 +14,28 @@ class userControl:
         self.new_username = StringVar()
         self.new_password = StringVar()
         self.start = ui()
+        self.user_repository = UserRepository()
 
         self.widgets()
 
     def create_user(self):
-        '''
-        create a new user into database
-
-        '''
-        with sqlite3.connect('database.db') as db:
-            cursor = db.cursor()
-
-        taken_user = ('SELECT username FROM User WHERE username = ?')
-        cursor.execute(taken_user, [(self.new_username.get())])
-        found_user = cursor.fetchall()
-
-        if found_user or self.new_username == "":
+        create_user = self.user_repository.create_user(
+            self.new_username.get(), self.new_password.get())
+        if create_user == False:
             messagebox.showerror(
-                'Error', 'Selected Username is not unique, please try again!')
-            return
+                'Error', 'Selected username is not unique , please try again!')
         else:
-            messagebox.showinfo('Success!', "Account has been created!")
+            messagebox.showinfo('Success!', 'Account has been created')
             self.log_frame()
-
-        create_account = 'INSERT INTO user(username,password) VALUES(?,?)'
-        cursor.execute(create_account, [
-                       (self.new_username.get()), (self.new_password.get())])
-        db.commit()
 
     def login_user(self):
         '''
         login a user to the system
         '''
-        with sqlite3.connect('database.db') as db:
-            cursor = db.cursor()
+        login_user = self.user_repository.login_user(
+            self.username.get(), self.password.get())
 
-        search_user = (
-            'SELECT * FROM user WHERE username = ? AND password = ?')
-        cursor.execute(
-            search_user, [(self.username.get()), (self.password.get())])
-        res = cursor.fetchall()
-
-        if res:
+        if login_user == True:
             self.login_frame.pack_forget()
             self.root.destroy()
             self.start.start()

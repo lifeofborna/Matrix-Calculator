@@ -10,5 +10,5 @@
 | 11.4  | 2    | Testien lisäys, ohjelmankoodin päivittäminen jotta se vastaisi pylint standardeja |
 | 19.4  | 5    | Determinantin, transpoosin ja käänteismatriisin logiikkaan tutustuminen ja niiden implemenointi pythonilla käyttöliittymään |
 | 23.4  | 6    | Kirjautumis mahdollisuuden suunnittelu, tkinter, sqlite tutustuminen. Graafisen toteutuksen alustava luominen |
-| 25.4  | 4    | Käyttäjän kirjautumis totetus implementointi, tietokannan lisääminen/käyttö, virheviestien tarkistus. Käyttöliittymän päivitys|
+| 25.4  | 4    | Käyttäjän kirjautumis totetus implementointi, tietokannan lisääminen/käyttö, virheviestien tarkistus. Käyttöliittymän päivitys ja testien luominen|
 | yht   | 41   |
