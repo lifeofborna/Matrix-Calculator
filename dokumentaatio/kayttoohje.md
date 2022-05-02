@@ -32,7 +32,7 @@ Kun olet kirjautunut sisään voit asettaa kahteen matriisiin arvoja laskea halu
 Halutessa voit myös laskea erillaisia matriisi operaatioita avaamalla pudotusvalikko, valitsemalla haluttu operaatio ja painamalla get näppäintä.
 Tulokset tulevat näkyviksi 'Resultant Matrix' matriisin kohdalle. Determinantissa avautuu uusi ikkuna, joka kertoo determinantin.
 
-![matriisisovellus](./kuvat/lambdab.png)
+![matriisisovellus](./kuvat/software2.png)
 
 ## Sovelluksen lopettaminen
 Sovelluksen voi lopettaa painamalla oikealla yläkulmassa olevaa rastia.
