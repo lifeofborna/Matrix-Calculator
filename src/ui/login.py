@@ -1,11 +1,10 @@
-from email import message
 from tkinter import *
 from tkinter import messagebox
-from ui.ui import ui
+from ui.ui import UserInterface
 from repositories.user_repository import UserRepository
 
 
-class userControl:
+class UserControl:
 
     def __init__(self, root):
         self.root = root
@@ -13,7 +12,7 @@ class userControl:
         self.password = StringVar()
         self.new_username = StringVar()
         self.new_password = StringVar()
-        self.start = ui()
+        self.start = UserInterface()
         self.user_repository = UserRepository()
 
         self.widgets()
@@ -38,7 +37,7 @@ class userControl:
         if login_user == True:
             self.login_frame.pack_forget()
             self.root.destroy()
-            self.start.start()
+            self.start.start(self.username.get())
 
         else:
             messagebox.showerror('Error', "No such username found")
@@ -103,5 +102,7 @@ class userControl:
 def run_class():
     root = Tk()
     root.title('Login Form')
-    userControl(root)
+    UserControl(root)
     root.mainloop()
+
+    

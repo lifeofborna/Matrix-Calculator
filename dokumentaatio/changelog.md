@@ -33,3 +33,14 @@ Yksityiskohdat:
 - Matriisin determinantin/transpoosin ja käänteismatriisin logiikan ja toiminallisuus lisätty.
 - Selkeän virheviestien lisääminen. 
 - Uusi näkymä ennenkuin laskimeen päästään niin pyydetään käyttäjää tekemään käyttäjän ellei jo tehty. Tiedot tallennetaan tietokantaan.
+
+## Viikko 6
+
+Yleisesti:
+Graafisen käyttöliittymän parannus
+
+Yksityiskohdat:
+- Käyttäjä voi kirjautua ulos.
+- Käyttäjän käyttäjänimi näkyy käyttöliittymässä
+- Käyttäjä voi tyhjentää matriisit clear napin avulla
+

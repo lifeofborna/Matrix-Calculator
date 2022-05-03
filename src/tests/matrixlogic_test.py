@@ -1,7 +1,4 @@
 import unittest
-
-from numpy import transpose
-
 from matrixcalculator.matrixlogic import MatrixLogic
 
 

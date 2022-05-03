@@ -13,6 +13,15 @@ class MatrixLogic:
     # Addition of the two matrices.
 
     def matrix_addition(self, matrix1, matrix2):
+        '''
+        Adds two matrices together and returns the result
+
+        Args:
+            matrix1,matrix2: user given matrices to substract.
+
+        Returns:
+            Calculated matrix
+        '''
         try:
             final_matrix = [[matrix1[i][j] + matrix2[i][j]
                              for j in range(len(matrix1[0]))] for i in range(len(matrix1))]
@@ -21,6 +30,14 @@ class MatrixLogic:
         return final_matrix
 
     def matrix_substraction(self, matrix1, matrix2):
+        '''Substracts two matrices
+
+        Args:
+            matrix1,matrix2: user given matrices to substract.
+
+        Returns:
+            Calculated matrix
+        '''
         try:
             final_matrix = [[matrix1[i][j] - matrix2[i][j]
                              for j in range(len(matrix1[0]))] for i in range(len(matrix1))]
@@ -28,9 +45,17 @@ class MatrixLogic:
             return False
         return final_matrix
 
-    # Multiplication of two matrices.
     def matrix_multiplication(self, matrix1, matrix2):
-        # Result will have same number of rows as first matrix, columns as second matrix->
+        '''Multiplies two matrices
+
+        Args:
+            matrix1,matrix2: user given matrices to multiply.
+
+        Returns:
+            Calculated matrix
+
+        '''
+
         columns = 3
         rows = 3
         final_matrix = [[0 for i in range(rows)] for j in range(columns)]
@@ -45,8 +70,16 @@ class MatrixLogic:
                         return False
         return final_matrix
 
-    # Find the determinant by cofactor
+
     def matrix_determinant(self, matrix):
+        '''Finds the determinant of a matrix by cofactor.
+
+        Args:
+            Matrix: matrix given by the user
+
+        Returns:
+            Determinant of the matrix
+        '''
         matrix_a = matrix[0][0]
         matrix_b = matrix[0][1]
         matrix_c = matrix[0][2]
@@ -61,8 +94,17 @@ class MatrixLogic:
         answer = determinant_a+determinant_b+determinant_c
         return answer
 
-    # Transpose the matrix rows = cols
+
     def matrix_transpose(self, matrix):
+        '''Calculates the transpose of the matrix
+
+        Args:
+            Matrix: matrix given by the user
+
+        Returns:
+            Calculated matrix
+
+        '''
         matrix_transpose = [[1 for i in range(3)] for j in range(3)]
 
         for i in range(len(matrix)):
@@ -70,8 +112,16 @@ class MatrixLogic:
                 matrix_transpose[j][i] = matrix[i][j]
         return matrix_transpose
 
-    # Find the inverse of the matrix, utilizing numpy
     def matrix_inverse(self, matrix):
+        '''Calculates the inverse of the matrix utilizing numpy and returns the result
+
+        Args:
+            matrix: matrix given by the user
+
+        Returns:
+            calculated matrix
+
+        '''
         if self.matrix_determinant(matrix) == 0:
             return []
 

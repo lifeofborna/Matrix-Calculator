@@ -16,6 +16,12 @@ class UserRepository:
         '''
         create a new user into database
 
+        Args:
+            user,password to set in to the database
+
+        Returns:
+            True if user has been added to database else False.
+
         '''
         with sqlite3.connect('database.db') as database_operation:
             cursor_operation = database_operation.cursor()
@@ -36,6 +42,12 @@ class UserRepository:
     def login_user(self, username, password):
         '''
         login a user to the system
+
+        Args:
+            username,password to check if credentials match in the database
+
+        Returns:
+            True if login with the credentials is successfull else False.
         '''
         with sqlite3.connect('database.db') as database_operation:
             cursor_operation = database_operation.cursor()
@@ -52,6 +64,13 @@ class UserRepository:
         return False
 
     def delete_user(self, user):
+        '''
+        Delete a user from the database
+
+        Args:
+            user: Given user to delete from database
+        '''
+
         with sqlite3.connect('database.db') as database_operation:
             cursor_operation = database_operation.cursor()
         sql_delete_user = ('DELETE FROM user WHERE username = ?')

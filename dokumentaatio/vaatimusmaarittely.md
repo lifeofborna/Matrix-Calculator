@@ -23,7 +23,7 @@ Sovellus on suunniteltu siten, että se koostuu yhdestä käyttäjäroolista.
   - Sovellus tarkistaa, että matriisi ei sisällä ei sallittuja merkkejä, jos löytyy heittää virheilmoituksen. (Tehty)
   - Sovellus myös tarkistaa jos kertolasku operaatio on valittu niin matriisien rivit ja sarakkeet ovat salittuja tähän operaatioon.(Tehty)
 - Käyttäjä voi tyhjentää historiansa
-- Käyttäjä voi kirjautua ulos
+- Käyttäjä voi kirjautua ulos (Tehty)
 
 ## Jatkokehitysideoita
 
