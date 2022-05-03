@@ -15,8 +15,10 @@ Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminalli
 
 [Arkkitehtuuri](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-[Release](https://github.com/lifeofborna/ot-harjoitustyo/releases/tag/viikko5)
+[Releases](https://github.com/lifeofborna/ot-harjoitustyo/releases)
 
+[Käyttöohje](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md
+)
 
 ## Asennus
 
