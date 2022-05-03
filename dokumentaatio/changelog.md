@@ -42,5 +42,6 @@ Graafisen käyttöliittymän parannus
 Yksityiskohdat:
 - Käyttäjä voi kirjautua ulos.
 - Käyttäjän käyttäjänimi näkyy käyttöliittymässä
+- Päiväämä ja aika näkyvät käyttöliittymässä
 - Käyttäjä voi tyhjentää matriisit clear napin avulla
 

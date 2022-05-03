@@ -12,6 +12,6 @@
 | 23.4  | 6    | Kirjautumis mahdollisuuden suunnittelu, tkinter, sqlite tutustuminen. Graafisen toteutuksen alustava luominen |
 | 25.4  | 4    | Käyttäjän kirjautumis totetus implementointi, tietokannan lisääminen/käyttö, virheviestien tarkistus. Käyttöliittymän päivitys ja testien luominen|
 | 26.4  | 3    | Koodin refaktorointi, sovelluslogiikan ja käyttöliittymän eroitus toisistaan! |
-| 2.5   | 2     | Clear näppäinten lisäys jotta käyttäjä voi tyhjentää matriisit |
-| 3.5   | 2     | Koodin refaktorointi, kirjautuminen ulos mahdollisuus, käyttäjän käyttäjänimi näkyy käyttöliittymässä |
+| 2.5   | 2    | Clear näppäinten lisäys jotta käyttäjä voi tyhjentää matriisit |
+| 3.5   | 2    | Koodin refaktorointi, kirjautuminen ulos mahdollisuus, käyttäjän käyttäjänimi näkyy käyttöliittymässä, aika/pvm implementointi |
 | yht   | 48   |
