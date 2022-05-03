@@ -35,4 +35,5 @@ Tulokset tulevat näkyviksi 'Resultant Matrix' matriisin kohdalle. Determinantis
 ![matriisisovellus](./kuvat/software2.png)
 
 ## Sovelluksen lopettaminen
-Sovelluksen voi lopettaa painamalla oikealla yläkulmassa olevaa rastia.
+Käyttäjä voi kirjautua ulos painamalla logout nappia.
+Sovelluksen voi kokonaan lopettaa painamalla oikealla yläkulmassa olevaa rastia.
