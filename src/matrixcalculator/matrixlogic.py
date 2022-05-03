@@ -70,7 +70,6 @@ class MatrixLogic:
                         return False
         return final_matrix
 
-
     def matrix_determinant(self, matrix):
         '''Finds the determinant of a matrix by cofactor.
 
@@ -93,7 +92,6 @@ class MatrixLogic:
 
         answer = determinant_a+determinant_b+determinant_c
         return answer
-
 
     def matrix_transpose(self, matrix):
         '''Calculates the transpose of the matrix

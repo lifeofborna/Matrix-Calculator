@@ -104,5 +104,3 @@ def run_class():
     root.title('Login Form')
     UserControl(root)
     root.mainloop()
-
-    

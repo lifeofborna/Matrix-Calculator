@@ -5,17 +5,17 @@ from tkinter import ttk
 import os
 from tkinter import messagebox
 import random
+from time import strftime
 
 #from ui.login import UserControl
 import ui.login
 from matrixcalculator.matrixlogic import MatrixLogic
 import sys
 
+
 class UserInterface:
     def __init__(self):
         self.matrixOperations = MatrixLogic()
-
-        
 
     def start(self, username):
         root = tk.Tk()
@@ -221,21 +221,50 @@ class UserInterface:
                      bg="white").place(x=155, y=470)
             tk.Label(root, text="Resultant Matrix :", font=('Raleway', 10, 'bold'),
                      bg="white").place(x=300, y=470)
-        
-     
-        
-        
-        
+
+        def logout():
+            '''Logs out the user and opens the login view'''
+            question = messagebox.askquestion(
+                'Exit Application', "Are you sure you wish to logout?")
+            if question == "yes":
+
+                root.destroy()
+                quit()
+                root2 = tk.Tk()
+                root2.title('Login Form')
+                ui.login.UserControl(root2)
+                root2.mainloop()
+
+            else:
+                messagebox.showinfo(
+                    "Return", "You will be returned back to the calculator")
+
+        def time():
+            '''Creates time label and places it'''
+            time_label = tk.Label(root, font=("Raleway", 10, 'bold'),
+                                  background="SlateBlue2",
+                                  foreground="white")
+
+            string = strftime('%H:%M:%S %p')
+            time_label.config(text=string)
+            time_label.place(x=185, y=45)
+
+            root.after_id = time_label.after(1000, time)
+
         def welcome_username():
             tk.Label(root, text=f"Welcome ", font=('Raleway', 10, 'bold'),
                      bg="white", fg="SlateBlue2").place(x=175, y=20)
             user_label = tk.Label(root, text=f"{username}", font=('Raleway', 10, 'bold'),
                                   bg="white")
+
             colors = ["SlateBlue3", "SlateBlue4",
-                      "RoyalBlue1", "tomato", "SlateBlue2"]
+                      "RoyalBlue1", "tomato", "SlateBlue2", "sandy brown", "light pink", "turquoise", "dodger blue"]
             fg = random.choice(colors)
             user_label.config(fg=fg)
-            user_label.place(x=247, y=20)
+
+            user_label.place(x=250, y=20)
+
+            root.after_id = user_label.after(3000, welcome_username)
 
         def entry_matrix(matrix_input, matrix_entries, s):
             '''Creates empty lists to array and appends StringVar and entry'''
@@ -274,32 +303,24 @@ class UserInterface:
                 x_interval = 0
 
         def initialize():
-            '''Initializes the welcome and sets the entry matrices'''
+            '''Initializes the welcome,time label and sets the entry matrices'''
             if len(username) < 8 and len(username) >= 1:
                 welcome_username()
             else:
                 tk.Label(root, text=f"Welcome user", font=('Raleway', 10, 'bold'),
                          bg="white", fg="SlateBlue2").place(x=175, y=20)
-            
-       
+
+            time()
             entry_matrix(matrix_input, matrix_entries, 200)
             entry_matrix(matrix_input2, matrix_entries2, 50)
             resultant_matrix(final_matrix)
             matrix_labels()
-        
-        def logout():
 
-            '''Logs out the user and opens the login view'''
-            question = messagebox.askquestion('Exit Application',"Are you sure you wish to logout?")
-            if question == "yes":
-                root.destroy()
-                root2 = tk.Tk()
-                root2.title('Login Form')
-                ui.login.UserControl(root2)
-                root2.mainloop()
-                
-            else:
-                messagebox.showinfo("Return","You will be returned back to the calculator")
+        def quit():
+            """Cancel all scheduled callbacks and quit."""
+            for after_id in root.tk.eval('after info').split():
+                root.after_cancel(after_id)
+
         # buttons
         cleared_text = tk.StringVar()
         cleared_text2 = tk.StringVar()
@@ -322,8 +343,8 @@ class UserInterface:
         SubButton.place(x=400, y=700)
 
         logout_button = tk.Button(
-            root, text="logout", bg='SlateBlue2', width=3,height=1, command=lambda: logout())
-        logout_button.place(x=205, y=45)
+            root, text="logout", bg='SlateBlue2', width=3, height=1, command=lambda: logout())
+        logout_button.place(x=200, y=75)
 
         additionButton = tk.Button(
             root, text="+", bg='DarkOliveGreen3', width=5, command=lambda: addition())
