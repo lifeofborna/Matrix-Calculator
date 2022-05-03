@@ -17,6 +17,8 @@ Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminalli
 
 [Release](https://github.com/lifeofborna/ot-harjoitustyo/releases/tag/viikko5)
 
+[Käyttöohje](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md
+)
 
 ## Asennus
 
