@@ -1,16 +1,12 @@
 import tkinter as tk
-from unittest import result
 from PIL import Image, ImageTk
 from tkinter import ttk
 import os
 from tkinter import messagebox
 import random
 from time import strftime
-
-#from ui.login import UserControl
 import ui.login
 from matrixcalculator.matrixlogic import MatrixLogic
-import sys
 
 
 class UserInterface:
@@ -43,6 +39,50 @@ class UserInterface:
         rows, cols = 3, 3
         final_matrix = [[0] * rows for i in range(cols)]
 
+        def show_error(first_matrix, second_matrix):
+            if first_matrix == -1 and second_matrix == -1:
+                messagebox.showerror("Error", "Please fill the matrices! ")
+            elif first_matrix == -1:
+                messagebox.showerror("Error", "Please fill the second matrix!")
+            elif second_matrix == -1:
+                messagebox.showerror("Error", "Please fill the first matrix!")
+
+        def entry_matrix(matrix_input, matrix_entries, s):
+            '''Creates empty lists to array and appends StringVar and entry'''
+
+            x_interval = 0
+            y_interval = 0
+            rows, cols = (3, 3)
+            for i in range(rows):
+                matrix_input.append([])
+                matrix_entries.append([])
+                for j in range(cols):
+                    matrix_input[i].append(tk.StringVar())
+                    matrix_entries[i].append(
+                        tk.Entry(root, textvariable=matrix_input[i][j], width=3))
+                    matrix_entries[i][j].place(
+                        x=s + x_interval, y=500 + y_interval)
+                    x_interval += 30
+
+                y_interval += 30
+                x_interval = 0
+
+        # Set the resultant matrix
+        def resultant_matrix(resultantMatrix):
+            '''Inserts a matrix to the resultant matrix'''
+            s = 350
+            x_interval = 0
+            y_interval = 0
+            rows, cols = (3, 3)
+            for i in range(rows):
+                for j in range(cols):
+                    entry = tk.Entry(root, width=3)
+                    entry.place(x=s + x_interval, y=500 + y_interval)
+                    entry.insert(tk.END, resultantMatrix[i][j])
+                    x_interval += 30
+                y_interval += 30
+                x_interval = 0
+
         def get_matrix(rows, cols, text_var):
             '''Creates a matrix from the values of the input
 
@@ -57,29 +97,9 @@ class UserInterface:
                     try:
                         matrix[i].append(int(text_var[i][j].get()))
                     except:
-                        messagebox.showerror(
-                            "Error", "Please check matrix input!")
                         return -1
 
             return matrix
-
-        def addition():
-            '''Initializes matrix addition by getting two matrix inputs,
-               calling matrixlogic class for matrix addition with the matrices. 
-            '''
-            first_matrix = get_matrix(3, 3, matrix_input)
-            if first_matrix == -1:
-                return
-            second_matrix = get_matrix(3, 3, matrix_input2)
-            if second_matrix == -1:
-                return
-
-            final_matrix = self.matrixOperations.matrix_addition(
-                first_matrix, second_matrix)
-            if final_matrix == False:
-                return
-
-            resultant_matrix(final_matrix)
 
         def clear_first_matrix():
             '''Clears the first matrix variables'''
@@ -95,28 +115,36 @@ class UserInterface:
 
             entry_matrix(matrix_input2, matrix_entries2, 50)
 
+        def addition():
+            '''Initializes matrix addition by getting two matrix inputs,
+               calling matrixlogic class for matrix addition with the matrices. 
+            '''
+            first_matrix = get_matrix(3, 3, matrix_input)
+            second_matrix = get_matrix(3, 3, matrix_input2)
+
+            if first_matrix == -1 or second_matrix == -1:
+                show_error(first_matrix, second_matrix)
+
+            else:
+                final_matrix = self.matrixOperations.matrix_addition(
+                    first_matrix, second_matrix)
+
+                resultant_matrix(final_matrix)
+
         def multiplication():
             '''Initializes matrix multiplication by getting two matrix inputs,
                calling matrixlogic class for matrix multiplication function with the matrices. 
             '''
 
             first_matrix = get_matrix(3, 3, matrix_input)
-            if first_matrix == -1:
-                return
             second_matrix = get_matrix(3, 3, matrix_input2)
-            if second_matrix == -1:
-                return
 
-            try:
+            if first_matrix == -1 or second_matrix == -1:
+                show_error(first_matrix, second_matrix)
+            else:
                 final_matrix = self.matrixOperations.matrix_multiplication(
                     first_matrix, second_matrix)
-            except:
-                final_matrix = False
-
-            if final_matrix == False:
-                return
-
-            resultant_matrix(final_matrix)
+                resultant_matrix(final_matrix)
 
         def substraction():
             '''Initializes matrix substraction by getting two matrix inputs,
@@ -124,90 +152,92 @@ class UserInterface:
             '''
 
             first_matrix = get_matrix(3, 3, matrix_input)
-            if first_matrix == -1:
-                return
             second_matrix = get_matrix(3, 3, matrix_input2)
-            if second_matrix == -1:
-                return
 
-            final_matrix = self.matrixOperations.matrix_substraction(
-                first_matrix, second_matrix)
+            if first_matrix == -1 or second_matrix == -1:
+                show_error(first_matrix, second_matrix)
 
-            if final_matrix == False:
-                return
-
-            resultant_matrix(final_matrix)
+            else:
+                final_matrix = self.matrixOperations.matrix_substraction(
+                    first_matrix, second_matrix)
+                resultant_matrix(final_matrix)
 
         def check_combo():
-            '''Checks which extra_operation is chosen and calls the appropriate function 
+            '''Checks which extra operation is chosen and calls the appropriate function 
             from matrixlogic'''
 
             first_matrix = get_matrix(3, 3, matrix_input)
-            if first_matrix == -1:
-                return
             second_matrix = get_matrix(3, 3, matrix_input2)
-            if second_matrix == -1:
-                return
 
             if chosen_operation.get() == ' Transpose matrix A':
-                try:
+                if second_matrix == -1:
+                    show_error(first_matrix, second_matrix)
+
+                else:
+
                     final_matrix = self.matrixOperations.matrix_transpose(
                         second_matrix)
-                except:
-                    return
-                resultant_matrix(final_matrix)
+
+                    resultant_matrix(final_matrix)
 
             elif chosen_operation.get() == ' Transpose matrix B':
-                try:
+                if first_matrix == -1:
+                    show_error(first_matrix, second_matrix)
+
+                else:
                     final_matrix = self.matrixOperations.matrix_transpose(
                         first_matrix)
-                except:
-                    return
+
                 resultant_matrix(final_matrix)
 
             elif chosen_operation.get() == ' Inverse matrix A':
-                try:
+                if second_matrix == -1:
+                    show_error(first_matrix, second_matrix)
+                else:
                     final_matrix = self.matrixOperations.matrix_inverse(
                         second_matrix)
-                except:
-                    return
-                if len(final_matrix) == 0:
-                    messagebox.showerror(
-                        "Warning", "Could not find an inverse for matrix A!")
-                    return
-                resultant_matrix(final_matrix)
+
+                    if len(final_matrix) == 0:
+                        messagebox.showerror(
+                            "Warning", "Could not find an inverse for matrix A!")
+                    else:
+                        resultant_matrix(final_matrix)
 
             elif chosen_operation.get() == ' Inverse matrix B':
-                try:
+                if first_matrix == -1:
+                    show_error(first_matrix, second_matrix)
+
+                else:
+
                     final_matrix = self.matrixOperations.matrix_inverse(
                         first_matrix)
-                except:
-                    return
 
-                if len(final_matrix) == 0:
-                    messagebox.showerror(
-                        "Warning", "Could not find an inverse for matrix B!")
-                    return
-                resultant_matrix(final_matrix)
+                    if len(final_matrix) == 0:
+                        messagebox.showerror(
+                            "Warning", "Could not find an inverse for matrix B!")
+                    else:
+                        resultant_matrix(final_matrix)
 
             elif chosen_operation.get() == ' Determinant A':
-                try:
+                if second_matrix == -1:
+                    show_error(first_matrix, second_matrix)
+                else:
+
                     final_matrix = self.matrixOperations.matrix_determinant(
                         second_matrix)
-                except:
-                    return
-                messagebox.showinfo(
-                    "Info", f"The determinant for the matrix A is: {final_matrix}")
+
+                    messagebox.showinfo(
+                        "Info", f"The determinant for the matrix A is: {final_matrix}")
 
             elif chosen_operation.get() == " Determinant B":
-
-                try:
+                if first_matrix == -1:
+                    show_error(first_matrix, second_matrix)
+                else:
                     final_matrix = self.matrixOperations.matrix_determinant(
                         first_matrix)
-                except:
-                    return
-                messagebox.showinfo(
-                    "Info", f"The determinant for the matrix B is: {final_matrix} ")
+
+                    messagebox.showinfo(
+                        "Info", f"The determinant for the matrix B is: {final_matrix} ")
 
         # new canvas for matrixes
         canvas = tk.Canvas(root, width=500, height=250,)
@@ -265,42 +295,6 @@ class UserInterface:
             user_label.place(x=250, y=20)
 
             root.after_id = user_label.after(3000, welcome_username)
-
-        def entry_matrix(matrix_input, matrix_entries, s):
-            '''Creates empty lists to array and appends StringVar and entry'''
-
-            x_interval = 0
-            y_interval = 0
-            rows, cols = (3, 3)
-            for i in range(rows):
-                matrix_input.append([])
-                matrix_entries.append([])
-                for j in range(cols):
-                    matrix_input[i].append(tk.StringVar())
-                    matrix_entries[i].append(
-                        tk.Entry(root, textvariable=matrix_input[i][j], width=3))
-                    matrix_entries[i][j].place(
-                        x=s + x_interval, y=500 + y_interval)
-                    x_interval += 30
-
-                y_interval += 30
-                x_interval = 0
-
-        # Set the resultant matrix
-        def resultant_matrix(resultantMatrix):
-            '''Inserts a matrix to the resultant matrix'''
-            s = 350
-            x_interval = 0
-            y_interval = 0
-            rows, cols = (3, 3)
-            for i in range(rows):
-                for j in range(cols):
-                    entry = tk.Entry(root, width=3)
-                    entry.place(x=s + x_interval, y=500 + y_interval)
-                    entry.insert(tk.END, resultantMatrix[i][j])
-                    x_interval += 30
-                y_interval += 30
-                x_interval = 0
 
         def initialize():
             '''Initializes the welcome,time label and sets the entry matrices'''

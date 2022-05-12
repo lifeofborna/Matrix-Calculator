@@ -10,7 +10,6 @@ class MatrixLogic:
     multiplication, addition and substraction.
     It can also produce a inverse, determinant or transpose of a matrix
     '''
-    # Addition of the two matrices.
 
     def matrix_addition(self, matrix1, matrix2):
         '''
@@ -59,9 +58,14 @@ class MatrixLogic:
         columns = 3
         rows = 3
         final_matrix = [[0 for i in range(rows)] for j in range(columns)]
-        for i in range(len(matrix1)):
-            for j in range(len(matrix2[0])):
-                for columns in range(len(matrix2)):
+
+        size_matrix1 = len(matrix1)
+        size_rows_matrix2 = len(matrix2[0])
+        matrix2_columns = len(matrix2)
+
+        for i in range(size_matrix1):
+            for j in range(size_rows_matrix2):
+                for columns in range(matrix2_columns):
                     if isinstance(matrix2[i][columns], int) \
                             and isinstance(matrix1[i][columns], int):
                         final_matrix[i][j] += matrix1[i][columns] * \
@@ -104,9 +108,10 @@ class MatrixLogic:
 
         '''
         matrix_transpose = [[1 for i in range(3)] for j in range(3)]
-
-        for i in range(len(matrix)):
-            for j in range(len(matrix[0])):
+        size_matrix = len(matrix)
+        size_rows = len(matrix[0])
+        for i in range(size_matrix):
+            for j in range(size_rows):
                 matrix_transpose[j][i] = matrix[i][j]
         return matrix_transpose
 

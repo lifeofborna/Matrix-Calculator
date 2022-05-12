@@ -1,7 +1,9 @@
+from email import message
 from tkinter import *
 from tkinter import messagebox
+from venv import create
 from ui.ui import UserInterface
-from repositories.user_repository import UserRepository
+from services.user_service import UserService
 
 
 class UserControl:
@@ -13,25 +15,25 @@ class UserControl:
         self.new_username = StringVar()
         self.new_password = StringVar()
         self.start = UserInterface()
-        self.user_repository = UserRepository()
+        self.user_services = UserService()
 
         self.widgets()
 
     def create_user(self):
-        create_user = self.user_repository.create_user(
+        create_user = self.user_services.create_user(
             self.new_username.get(), self.new_password.get())
-        if create_user == False:
-            messagebox.showerror(
-                'Error', 'Selected username is not unique , please try again!')
-        else:
+
+        if create_user == True:
             messagebox.showinfo('Success!', 'Account has been created')
             self.log_frame()
+        else:
+            messagebox.showerror("Error", create_user)
 
     def login_user(self):
         '''
         login a user to the system
         '''
-        login_user = self.user_repository.login_user(
+        login_user = self.user_services.login_user(
             self.username.get(), self.password.get())
 
         if login_user == True:
@@ -40,7 +42,7 @@ class UserControl:
             self.start.start(self.username.get())
 
         else:
-            messagebox.showerror('Error', "No such username found")
+            messagebox.showerror('Error', "No such credentials found")
 
     def log_frame(self):
         '''

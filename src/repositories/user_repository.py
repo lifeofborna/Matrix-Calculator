@@ -1,16 +1,22 @@
 import sqlite3
 
-with sqlite3.connect('database.db') as database:
-    cursor = database.cursor()
-
-
-cursor.execute(
-    'CREATE TABLE IF NOT EXISTS user (username TEXT NOT NULL PRIMARY KEY,password TEXT NOT NULL);')
-database.commit()
-database.close()
-
 
 class UserRepository:
+
+    def __init__(self, test=""):
+
+        self.create_database = test
+
+        if test == "":
+            self.create_database = 'database.db'
+
+        with sqlite3.connect(self.create_database) as self.database:
+            self.cursor = self.database.cursor()
+
+        self.cursor.execute(
+            '''CREATE TABLE IF NOT EXISTS user
+            (username TEXT NOT NULL PRIMARY KEY,password TEXT NOT NULL);''')
+        self.database.commit()
 
     def create_user(self, user, password):
         '''
@@ -23,20 +29,18 @@ class UserRepository:
             True if user has been added to database else False.
 
         '''
-        with sqlite3.connect('database.db') as database_operation:
-            cursor_operation = database_operation.cursor()
 
         taken_user = ('SELECT username FROM User WHERE username = ?')
-        cursor_operation.execute(taken_user, [(user)])
-        found_user = cursor_operation.fetchall()
+        self.cursor.execute(taken_user, [(user)])
+        found_user = self.cursor.fetchall()
 
         if found_user:
             return False
 
         create_account = 'INSERT INTO user(username,password) VALUES(?,?)'
-        cursor_operation.execute(create_account, [(user), (password)])
+        self.cursor.execute(create_account, [(user), (password)])
 
-        database_operation.commit()
+        self.database.commit()
         return True
 
     def login_user(self, username, password):
@@ -49,30 +53,20 @@ class UserRepository:
         Returns:
             True if login with the credentials is successfull else False.
         '''
-        with sqlite3.connect('database.db') as database_operation:
-            cursor_operation = database_operation.cursor()
 
         search_user = (
             'SELECT * FROM user WHERE username = ? AND password = ?')
-        cursor_operation.execute(
+        self.cursor.execute(
             search_user, [(username), (password)])
-        res = cursor_operation.fetchall()
+        res = self.cursor.fetchall()
 
         if res:
             return True
 
         return False
 
-    def delete_user(self, user):
+    def drop_table(self):
         '''
-        Delete a user from the database
-
-        Args:
-            user: Given user to delete from database
+        clear the database by deleting everything from user
         '''
-
-        with sqlite3.connect('database.db') as database_operation:
-            cursor_operation = database_operation.cursor()
-        sql_delete_user = ('DELETE FROM user WHERE username = ?')
-        cursor_operation.execute(sql_delete_user, [(user)])
-        database_operation.commit()
+        self.cursor.execute("DELETE FROM user")
