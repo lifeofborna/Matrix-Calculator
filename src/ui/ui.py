@@ -10,6 +10,12 @@ from matrixcalculator.matrixlogic import MatrixLogic
 
 
 class UserInterface:
+
+    '''
+    This class takes care of the main UI for the matrix calculator.
+
+    '''
+
     def __init__(self):
         self.matrixOperations = MatrixLogic()
 
@@ -40,6 +46,9 @@ class UserInterface:
         final_matrix = [[0] * rows for i in range(cols)]
 
         def show_error(first_matrix, second_matrix):
+            '''
+            returns what type of error has been detected with matrices
+            '''
             if first_matrix == -1 and second_matrix == -1:
                 messagebox.showerror("Error", "Please fill the matrices! ")
             elif first_matrix == -1:

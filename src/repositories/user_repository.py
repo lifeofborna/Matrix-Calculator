@@ -3,6 +3,12 @@ import sqlite3
 
 class UserRepository:
 
+    '''
+    This class will execute different SQL operations on a database.
+    Functionality to create/login/cleartable.
+
+    '''
+
     def __init__(self, test=""):
 
         self.create_database = test
@@ -65,7 +71,7 @@ class UserRepository:
 
         return False
 
-    def drop_table(self):
+    def clear_table(self):
         '''
         clear the database by deleting everything from user
         '''

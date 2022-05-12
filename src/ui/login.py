@@ -1,12 +1,16 @@
 from email import message
 from tkinter import *
 from tkinter import messagebox
-from venv import create
 from ui.ui import UserInterface
 from services.user_service import UserService
 
 
 class UserControl:
+
+    '''
+    This class handles and updates the login UI. 
+
+    '''
 
     def __init__(self, root):
         self.root = root
