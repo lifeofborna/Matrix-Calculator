@@ -13,19 +13,19 @@ class UserControl:
     '''
 
     def __init__(self, root):
-        self.root = root
-        self.username = StringVar()
-        self.password = StringVar()
-        self.new_username = StringVar()
-        self.new_password = StringVar()
-        self.start = UserInterface()
-        self.user_services = UserService()
+        self._root = root
+        self._username = StringVar()
+        self._password = StringVar()
+        self._new_username = StringVar()
+        self._new_password = StringVar()
+        self._start = UserInterface()
+        self._user_services = UserService()
 
         self.widgets()
 
     def create_user(self):
-        create_user = self.user_services.create_user(
-            self.new_username.get(), self.new_password.get())
+        create_user = self._user_services.create_user(
+            self._new_username.get(), self._new_password.get())
 
         if create_user == True:
             messagebox.showinfo('Success!', 'Account has been created')
@@ -37,13 +37,13 @@ class UserControl:
         '''
         login a user to the system
         '''
-        login_user = self.user_services.login_user(
-            self.username.get(), self.password.get())
+        login_user = self._user_services.login_user(
+            self._username.get(), self._password.get())
 
         if login_user == True:
             self.login_frame.pack_forget()
-            self.root.destroy()
-            self.start.start(self.username.get())
+            self._root.destroy()
+            self._start.start(self._username.get())
 
         else:
             messagebox.showerror('Error', "No such credentials found")
@@ -52,8 +52,8 @@ class UserControl:
         '''
         update login frame
         '''
-        self.username.set('')
-        self.password.set('')
+        self._username.set('')
+        self._password.set('')
         self.create_frame.pack_forget()
         self.head['text'] = 'Sign in'
         self.login_frame.pack()
@@ -62,8 +62,8 @@ class UserControl:
         '''
         update register frame
         '''
-        self.new_username.set('')
-        self.new_password.set('')
+        self._new_username.set('')
+        self._new_password.set('')
         self.login_frame.pack_forget()
         self.head['text'] = 'Sign up'
         self.create_frame.pack()
@@ -72,17 +72,17 @@ class UserControl:
         '''
         Create necessary widgets
         '''
-        self.head = Label(self.root, text='Sign in',
+        self.head = Label(self._root, text='Sign in',
                           font=('Raleway', 20), pady=10)
         self.head.pack()
-        self.login_frame = Frame(self.root, padx=10, pady=10)
+        self.login_frame = Frame(self._root, padx=10, pady=10)
         Label(self.login_frame, text='Username: ', font=(
             'Raleway', 15), pady=5, padx=5).grid(sticky=W)
-        Entry(self.login_frame, textvariable=self.username,
+        Entry(self.login_frame, textvariable=self._username,
               bd=5, font=('Raleway', 15)).grid(row=0, column=1)
         Label(self.login_frame, text='Password: ', font=(
             'Raleway', 15), pady=5, padx=5).grid(sticky=W)
-        Entry(self.login_frame, textvariable=self.password, bd=5,
+        Entry(self.login_frame, textvariable=self._password, bd=5,
               font=('Raleway', 15), show='*').grid(row=1, column=1)
         Button(self.login_frame, text=' Sign in ', bd=3, font=(
             'Raleway', 15), padx=5, pady=5, command=self.login_user).grid()
@@ -90,14 +90,14 @@ class UserControl:
             'Raleway', 15), padx=5, pady=5, command=self.reg_frame).grid(row=2, column=1)
         self.login_frame.pack()
 
-        self.create_frame = Frame(self.root, padx=10, pady=10)
+        self.create_frame = Frame(self._root, padx=10, pady=10)
         Label(self.create_frame, text='Username: ', font=(
             'Raleway', 20), pady=5, padx=5).grid(sticky=W)
-        Entry(self.create_frame, textvariable=self.new_username,
+        Entry(self.create_frame, textvariable=self._new_username,
               bd=5, font=('Raleway', 15)).grid(row=0, column=1)
         Label(self.create_frame, text='Password: ', font=(
             'Raleway', 20), pady=5, padx=5).grid(sticky=W)
-        Entry(self.create_frame, textvariable=self.new_password, bd=5,
+        Entry(self.create_frame, textvariable=self._new_password, bd=5,
               font=('Raleway', 15), show='*').grid(row=1, column=1)
         Button(self.create_frame, text='Create Account', bd=3, font=(
             'Raleway', 15), padx=5, pady=5, command=self.create_user).grid()

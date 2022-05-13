@@ -17,7 +17,7 @@ class UserInterface:
     '''
 
     def __init__(self):
-        self.matrixOperations = MatrixLogic()
+        self._matrixOperations = MatrixLogic()
 
     def start(self, username):
         root = tk.Tk()
@@ -135,7 +135,7 @@ class UserInterface:
                 show_error(first_matrix, second_matrix)
 
             else:
-                final_matrix = self.matrixOperations.matrix_addition(
+                final_matrix = self._matrixOperations.matrix_addition(
                     first_matrix, second_matrix)
 
                 resultant_matrix(final_matrix)
@@ -151,7 +151,7 @@ class UserInterface:
             if first_matrix == -1 or second_matrix == -1:
                 show_error(first_matrix, second_matrix)
             else:
-                final_matrix = self.matrixOperations.matrix_multiplication(
+                final_matrix = self._matrixOperations.matrix_multiplication(
                     first_matrix, second_matrix)
                 resultant_matrix(final_matrix)
 
@@ -167,7 +167,7 @@ class UserInterface:
                 show_error(first_matrix, second_matrix)
 
             else:
-                final_matrix = self.matrixOperations.matrix_substraction(
+                final_matrix = self._matrixOperations.matrix_substraction(
                     first_matrix, second_matrix)
                 resultant_matrix(final_matrix)
 
@@ -184,7 +184,7 @@ class UserInterface:
 
                 else:
 
-                    final_matrix = self.matrixOperations.matrix_transpose(
+                    final_matrix = self._matrixOperations.matrix_transpose(
                         second_matrix)
 
                     resultant_matrix(final_matrix)
@@ -194,7 +194,7 @@ class UserInterface:
                     show_error(first_matrix, second_matrix)
 
                 else:
-                    final_matrix = self.matrixOperations.matrix_transpose(
+                    final_matrix = self._matrixOperations.matrix_transpose(
                         first_matrix)
 
                 resultant_matrix(final_matrix)
@@ -203,7 +203,7 @@ class UserInterface:
                 if second_matrix == -1:
                     show_error(first_matrix, second_matrix)
                 else:
-                    final_matrix = self.matrixOperations.matrix_inverse(
+                    final_matrix = self._matrixOperations.matrix_inverse(
                         second_matrix)
 
                     if len(final_matrix) == 0:
@@ -218,7 +218,7 @@ class UserInterface:
 
                 else:
 
-                    final_matrix = self.matrixOperations.matrix_inverse(
+                    final_matrix = self._matrixOperations.matrix_inverse(
                         first_matrix)
 
                     if len(final_matrix) == 0:
@@ -232,7 +232,7 @@ class UserInterface:
                     show_error(first_matrix, second_matrix)
                 else:
 
-                    final_matrix = self.matrixOperations.matrix_determinant(
+                    final_matrix = self._matrixOperations.matrix_determinant(
                         second_matrix)
 
                     messagebox.showinfo(
@@ -242,7 +242,7 @@ class UserInterface:
                 if first_matrix == -1:
                     show_error(first_matrix, second_matrix)
                 else:
-                    final_matrix = self.matrixOperations.matrix_determinant(
+                    final_matrix = self._matrixOperations.matrix_determinant(
                         first_matrix)
 
                     messagebox.showinfo(

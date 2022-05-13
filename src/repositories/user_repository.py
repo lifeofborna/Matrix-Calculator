@@ -11,18 +11,18 @@ class UserRepository:
 
     def __init__(self, test=""):
 
-        self.create_database = test
+        self._create_database = test
 
         if test == "":
-            self.create_database = 'database.db'
+            self._create_database = 'database.db'
 
-        with sqlite3.connect(self.create_database) as self.database:
-            self.cursor = self.database.cursor()
+        with sqlite3.connect(self._create_database) as self._database:
+            self._cursor = self._database.cursor()
 
-        self.cursor.execute(
+        self._cursor.execute(
             '''CREATE TABLE IF NOT EXISTS user
             (username TEXT NOT NULL PRIMARY KEY,password TEXT NOT NULL);''')
-        self.database.commit()
+        self._database.commit()
 
     def create_user(self, user, password):
         '''
@@ -37,16 +37,16 @@ class UserRepository:
         '''
 
         taken_user = ('SELECT username FROM User WHERE username = ?')
-        self.cursor.execute(taken_user, [(user)])
-        found_user = self.cursor.fetchall()
+        self._cursor.execute(taken_user, [(user)])
+        found_user = self._cursor.fetchall()
 
         if found_user:
             return False
 
         create_account = 'INSERT INTO user(username,password) VALUES(?,?)'
-        self.cursor.execute(create_account, [(user), (password)])
+        self._cursor.execute(create_account, [(user), (password)])
 
-        self.database.commit()
+        self._database.commit()
         return True
 
     def login_user(self, username, password):
@@ -62,9 +62,9 @@ class UserRepository:
 
         search_user = (
             'SELECT * FROM user WHERE username = ? AND password = ?')
-        self.cursor.execute(
+        self._cursor.execute(
             search_user, [(username), (password)])
-        res = self.cursor.fetchall()
+        res = self._cursor.fetchall()
 
         if res:
             return True
@@ -75,4 +75,4 @@ class UserRepository:
         '''
         clear the database by deleting everything from user
         '''
-        self.cursor.execute("DELETE FROM user")
+        self._cursor.execute("DELETE FROM user")
