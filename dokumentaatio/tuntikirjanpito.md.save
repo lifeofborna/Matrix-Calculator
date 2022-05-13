@@ -14,7 +14,7 @@
 | 26.4  | 3    | Koodin refaktorointi, sovelluslogiikan ja käyttöliittymän eroitus toisistaan! |
 | 2.5   | 2    | Clear näppäinten lisäys jotta käyttäjä voi tyhjentää matriisit |
 | 3.5   | 2    | Koodin refaktorointi, kirjautuminen ulos mahdollisuus, käyttäjän käyttäjänimi näkyy käyttöliittymässä, aika/pvm implementointi |
-| 10.5  | 3    | Testi rakenteen korjaaminen, Käyttäjätunnuksen/salasanan tarkistaminen ja tiettyjen ehtojen lisääminen, virheilmoituksien parantaminen kertoo tarkemmin  missä matriisissa ongelma jos operaatiota yritetään suorittaa. |
-| 11.5  | 2    | Koodin struktuurin parantaminen esim UserServicen lisääminen ja koodin refaktorointi. Turhien try catchien poistaminen koodista ja koodin parantamista. Järkevät palautuksen funktioissa.  |
-| 12.5  | 2    | Uusien testien lisääminen userservicelle, testitietokannan käyttöönotto, pylint virheiden korjaamista ja koodin laadun parantamista |
-| yht   | 55   |
+    | Koodin refaktorointi, kirjautuminen ulos mahdollisuus, käyttäjän käyttäjänimi näkyy käyttöliittymässä, aika/pvm implem>
+
+
+| yht   | 48   |
