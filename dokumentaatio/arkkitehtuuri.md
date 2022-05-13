@@ -20,9 +20,14 @@ Käyttöliittymä hyödyntää esimerkiksi metodeja:
  
  `matrix_multiplication(matrix1,matrix2),`
 
-* [user_repository](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/src/repositories/user_repository.py)
+Käyttöliittymä myös hyödyntää user_service luokkaa.
+* [user_service](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/src/services/user_service.py)
 
-matrixlogic luokassa tehdään erilaisia operaatioita käyttäjän syöttämiin matriiseihin ja user_repository vastaa tietokannan hallitsemisesta ja sen päivitykseen liittyvästä logiikasta. 
+`create_user(username,password)`
+
+`login_user(username,password)`
+
+Matrixlogic luokassa tehdään erilaisia operaatioita käyttäjän syöttämiin matriiseihin ja user_service vastaa käyttäjä hallinasta vastaavasta logiikasta hyödyntämällä user_repositoryn tietokantaoperaatiota. 
 
 ## Tietojen pysyväistallennus
 Tietojen pysyväistallennuksesta vastaa luokka
