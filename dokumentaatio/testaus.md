@@ -8,7 +8,7 @@ testataan vain MatrixLogic luokan funktioita.
 
 Testattavana on myös UserService luokka joka siis hallitsee käyttäjän hallinnasta. Tässä tapauksessa UserService;lle annetaan default parametrin
 sijaan "test.db" joka siis luo uuden testi tietokannan jota käytämme testeissä. Testit testaavat miten UserService luokka hyödyntää UserRepositorya
-ja sen tietokantaoperaatioita. Testeissä kokeillaan eri arvoilla käyttäjän kirjautumista ja rekisteröitymistä ja katsotaan palutuuko haluttu arvo.
+ja sen tietokantaoperaatioita. Testeissä kokeillaan eri arvoilla käyttäjän kirjautumista ja rekisteröitymistä ja katsotaan palautuuko haluttu arvo.
 Jokaisella testikierroksella myös tyhjennetään testitietokanta ennenkuin mitään operaatioita testataan.
 
 ## Testauskattavuus
