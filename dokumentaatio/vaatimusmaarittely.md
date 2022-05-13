@@ -10,6 +10,8 @@ Sovellus on suunniteltu siten, että se koostuu yhdestä käyttäjäroolista.
 
 ### Ennen kirjautumista
 - Käyttäjällä on mahdollisuus luoda käyttäjätunnuksen
+  - käyttäjätunnuksen täytyy olla uniikki eikä saa olla tyhjä tai yli 15 merkkiä
+  - Salasanan täytyy olla vähintää enemmän kuin 5 mutta alle 20 merkkiä
 - Käyttäjällä on mahdollisuus kirjautua sovellukseen.
 - Jos käyttäjätunnus on väärin tai sitä ei löydy niin sovellus antaa selkeän virheilmoituksen.
 
@@ -23,6 +25,7 @@ Sovellus on suunniteltu siten, että se koostuu yhdestä käyttäjäroolista.
 - Matriisin determinantin laskeminen.
 - Matriisien transpoosien laskeminen. 
 - Käänteismatriisin laskeminen. 
+- Jos syöte on väärin järkevä virheilmoitus
 - Tyhjentää matriisi syötteet
 
 ## Jatkokehitysideoita
