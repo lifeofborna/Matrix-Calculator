@@ -1,8 +1,7 @@
 # Vaatimusmäärittely
 
 ## Sovelluksen tarkoitus
-Sovelluksen tarkoituksena on mahdollistaa käyttäjän antamaan matriisiin tiettyjä laskuoperaatioita. Sovelluksen on myös tarkoitus 
-pitää historiaa tapahtuneista laskuista/tuloksista.
+Sovelluksen tarkoituksena on mahdollistaa käyttäjän kirjautumisen ja antamaan 3x3 matriisiin tiettyjä laskuoperaatioita. Sovellus myös toteuttaa erilaisia matriisi operaatioita. 
 
 ## Käyttäjät
 Sovellus on suunniteltu siten, että se koostuu yhdestä käyttäjäroolista. 
@@ -10,31 +9,27 @@ Sovellus on suunniteltu siten, että se koostuu yhdestä käyttäjäroolista.
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen kirjautumista
-- Käyttäjällä on mahdollisuus luoda käyttäjätunnuksen(Tehty)
-- Käyttäjällä on mahdollisuus kirjautua sovellukseen.(Tehty)
-- Jos käyttäjätunnus on väärin tai sitä ei löydy niin sovellus antaa selkeän virheilmoituksen.(Tehty)
+- Käyttäjällä on mahdollisuus luoda käyttäjätunnuksen
+- Käyttäjällä on mahdollisuus kirjautua sovellukseen.
+- Jos käyttäjätunnus on väärin tai sitä ei löydy niin sovellus antaa selkeän virheilmoituksen.
 
 ### Kirjautumisen jälkeen
-- Käyttäjä näkee vanhat suoritetut laskut.
-- Käyttäjä voi luoda uuden laskun ja valita laskuoperaation. (Tehty)
-  - Laskuoperaatiot ovat ( - + * ) (Tehty)
-  - Jos käyttäjä syöttää laittoman laskuoperaation niin sovellus antaa virheilmoituksen. (Tehty) 
-- Käyttäjä antaa matriisin, johon tehdän laskuoperaatio ja toinen matriisi, jolla laskuoperaatio suoritetaan. (Tehty) 
-  - Sovellus tarkistaa, että matriisi ei sisällä ei sallittuja merkkejä, jos löytyy heittää virheilmoituksen. (Tehty)
-  - Sovellus myös tarkistaa jos kertolasku operaatio on valittu niin matriisien rivit ja sarakkeet ovat salittuja tähän operaatioon.(Tehty)
-- Käyttäjä voi tyhjentää historiansa
-- Käyttäjä voi kirjautua ulos (Tehty)
+- Käyttäjä voi luoda uuden laskun ja valita laskuoperaation. 
+  - Laskuoperaatiot ovat ( - + * )
+  - Jos käyttäjä syöttää laittoman laskuoperaation niin sovellus antaa virheilmoituksen. 
+- Käyttäjä antaa matriisin, johon tehdän laskuoperaatio ja toinen matriisi, jolla laskuoperaatio suoritetaan. 
+  - Sovellus tarkistaa, että matriisi ei sisällä ei sallittuja merkkejä, jos löytyy heittää virheilmoituksen. 
+- Käyttäjä voi kirjautua ulos 
+- Matriisin determinantin laskeminen.
+- Matriisien transpoosien laskeminen. 
+- Käänteismatriisin laskeminen. 
+- Tyhjentää matriisi syötteet
 
 ## Jatkokehitysideoita
 
 Perusversion jälkeen järjestelmää on mahdollista parantaa seuraavilla toiminnallisuuksilla: 
 
 - Matriisien ominaisarvojen/vektoreiden laskeminen.
-- Matriisin determinattien laskeminen.(Tehty)
-- Matriisien transpoosien laskeminen. (Tehty)
-- Matriisien vieminen porrasmuotoon tai supistettuun porrasmuotoon. 
-- Onko matriisi lineaarisesti riippumaton.
-- Matriisin kertominen skalaareilla. 
-- Matriisin dimension näyttäminen aina laskutoimituksen jälkeen.
 - Käyttäjän historiasta on mahdollista kopioda vanha laskutoimitus ja tehdä uusia operaatioita siihen. 
 - Poistaa jo tehty käyttäjä.
+- Tallentaa käyttäjän tehdyt laskut
