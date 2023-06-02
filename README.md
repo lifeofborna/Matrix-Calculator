@@ -1,48 +1,44 @@
-# *Ohjelmisto tekniikan harjoitustyö: Matriisilaskin*
+# *Software Engineering Project: Matrix Calculator*
 
-Sovelluksen ideana on, kahden matriisin väliset matriisi operaatiot. Toiminallisuuksiin kuuluu, kahden matriisin kertominen, yhteenlasku ja erotus. Ohjelman toiminallisuuksiin kuuluu myös matriisien transpoosin, käänteismatriisin sekä determinantin laskeminen. 
+The concept of the application centers around operations between two matrices. Its functionalities include multiplication, addition, and subtraction of two matrices. The application also provides features for calculating matrix transpose, inverse, and determinant.
 
-![Kuva](./dokumentaatio/kuvat/finalsoftware.png)
+![Image](./dokumentaatio/kuvat/finalsoftware.png)
 
+## Documentation
+[Requirement Specification](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
-
-## Dokumentaatio
-[Vaatimusmäärittely](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
-
-[Tuntikirjanpito](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+[Hour Log](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
 [Changelog](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
-[Arkkitehtuuri](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Architecture](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 [Releases](https://github.com/lifeofborna/ot-harjoitustyo/releases)
 
-[Käyttöohje](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+[User Guide](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
-[Testaus](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
+[Testing](https://github.com/lifeofborna/ot-harjoitustyo/blob/master/dokumentaatio/testaus.md)
 
+## Installation
 
-## Asennus
-
-1. Tarvittavien riippuvuuksien asentaminen:
+1. Install the necessary dependencies:
 >**poetry install**
 
-2. Sovelluksen käynnistäminen tapahtuu seuraavasti:
+2. Starting the application is done as follows:
 >**poetry run invoke start**
 
+## Command Line Operations
 
-## Komentorivitoiminnot
-
-### Sovelluksen käynnistys:
+### Starting the Application:
 >**poetry run invoke start**
 
-### Sovelluksen testien suoritus
+### Running the Application Tests
 >**poetry run invoke test**
 
-### Testikattavuuden suoritus
+### Running Test Coverage
 > **poetry run invoke coverage-report** 
 > 
-Raportti löytyy htmlcov hakemistosta.
+Report can be found in the htmlcov directory.
 
-### Pylint tarkistukset suoritetaan:
+### Pylint checks are performed:
 > **poetry run invoke lint**
